@@ -62,11 +62,11 @@ fun ProfileScreen() {
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFF1A1A1A) // Slightly different dark for app bar
+                    containerColor = Color(0xFF1A1A1A) 
                 )
             )
         },
-        containerColor = Color(0xFF121212) // Main dark background color
+        containerColor = Color(0xFF121212)
     ) { paddingValues ->
         LazyColumn(
             modifier = Modifier
@@ -81,16 +81,16 @@ fun ProfileScreen() {
                 ProfileHeaderSection(
                     name = "Andaz Kumar",
                     memberSince = "member since Dec, 2020",
-                    profileImageRes = R.drawable.profile_placeholder, // Your profile image
-                    editIconResId = R.drawable.ic_edit // Your edit icon
+                    profileImageRes = R.drawable.profile_placeholder,
+                    editIconResId = R.drawable.ic_edit 
                 )
             }
 
             item { Spacer(modifier = Modifier.height(24.dp)) }
 
-            // CRED Garage Section
+            
             item {
-                CredGarageSection(garageIconResId = R.drawable.ic_garage) // Your garage icon
+                CredGarageSection(garageIconResId = R.drawable.ic_garage) 
             }
 
             item { Spacer(modifier = Modifier.height(24.dp)) }
@@ -98,17 +98,17 @@ fun ProfileScreen() {
             // Info Items
             item {
                 InfoItem(
-                    iconResId = R.drawable.ic_credit_score, // Your credit score icon
+                    iconResId = R.drawable.ic_credit_score, 
                     title = "credit score",
                     value = "757",
                     highlightText = "REFRESH AVAILABLE",
-                    highlightColor = Color(0xFF30D5C8) // Tealish color
+                    highlightColor = Color(0xFF30D5C8) 
                 )
             }
             item { ListDivider() }
             item {
                 InfoItem(
-                    iconResId = R.drawable.ic_monetization, // Your monetization/cashback icon
+                    iconResId = R.drawable.ic_monetization, 
                     title = "lifetime cashback",
                     value = "₹3"
                 )
@@ -116,7 +116,7 @@ fun ProfileScreen() {
             item { ListDivider() }
             item {
                 InfoItem(
-                    iconResId = R.drawable.ic_account_balance, // Your bank balance icon
+                    iconResId = R.drawable.ic_account_balance, 
                     title = "bank balance",
                     value = "check"
                 )
@@ -162,7 +162,7 @@ fun ProfileScreen() {
                     title = "all transactions"
                 )
             }
-            item { Spacer(modifier = Modifier.height(24.dp)) } // Bottom padding
+            item { Spacer(modifier = Modifier.height(24.dp)) } 
         }
     }
 }
@@ -190,8 +190,8 @@ fun ProfileHeaderSection(name: String, memberSince: String, profileImageRes: Int
             Icon(
                 painter = painterResource(id = editIconResId),
                 contentDescription = "Edit Profile",
-                modifier = Modifier.size(63.dp, 59.dp), // Apply size to the Icon
-                tint = Color.Unspecified // <--- ADD THIS
+                modifier = Modifier.size(63.dp, 59.dp), 
+                tint = Color.Unspecified 
             )
         }
     }
@@ -201,7 +201,7 @@ fun ProfileHeaderSection(name: String, memberSince: String, profileImageRes: Int
 fun CredGarageSection(garageIconResId: Int) {
     Card(
         shape = RoundedCornerShape(12.dp),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFF2A2A2A)), // Darker card
+        colors = CardDefaults.cardColors(containerColor = Color(0xFF2A2A2A)), 
         modifier = Modifier.fillMaxWidth()
     ) {
         Row(
@@ -213,7 +213,7 @@ fun CredGarageSection(garageIconResId: Int) {
             Icon(
                 painter = painterResource(id = garageIconResId),
                 contentDescription = "CRED Garage",
-                tint = Color.LightGray, // Or Color.Unspecified
+                tint = Color.LightGray, 
                 modifier = Modifier.size(36.dp)
             )
             Spacer(modifier = Modifier.width(12.dp))
@@ -340,7 +340,7 @@ fun ListDivider() {
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun ProfileScreenDarkPreview() {
-    MaterialTheme(colorScheme = darkColorScheme()) { // Example of applying a dark theme for preview
+    MaterialTheme(colorScheme = darkColorScheme()) { 
         ProfileScreen()
     }
 }
@@ -348,8 +348,8 @@ fun ProfileScreenDarkPreview() {
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Composable
 fun ProfileScreenLightPreview() {
-    MaterialTheme(colorScheme = lightColorScheme()) { // Example of applying a light theme for preview
-        Surface(color = Color(0xFF121212)) { // Simulate dark background for light theme preview
+    MaterialTheme(colorScheme = lightColorScheme()) { 
+        Surface(color = Color(0xFF121212)) {
             ProfileScreen()
         }
     }
